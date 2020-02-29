@@ -50,7 +50,6 @@ class PlayControllerViewController: UIViewController {
     }
 
     @IBAction func stopbutton (_ sender: UIButton)  {
-        print("stop button pressed")
         stopAudio()
     }
 
@@ -58,7 +57,6 @@ class PlayControllerViewController: UIViewController {
         super.viewDidLoad()
 
         setupAudio()
-        // Do any additional setup after loading the view.
     }
     
 

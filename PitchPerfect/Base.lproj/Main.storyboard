@@ -23,7 +23,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-DS-DlU">
-                                <rect key="frame" x="175" y="586.5" width="64" height="64"/>
+                                <rect key="frame" x="175" y="571.5" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="MrS-ma-oAa"/>
                                     <constraint firstAttribute="height" constant="64" id="QYM-8P-dJS"/>
@@ -34,7 +34,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYZ-iH-vV2">
-                                <rect key="frame" x="154" y="545.5" width="106.5" height="21"/>
+                                <rect key="frame" x="154" y="535.5" width="106.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,8 +44,8 @@
                         <constraints>
                             <constraint firstItem="KYZ-iH-vV2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Frj-RR-2pD"/>
                             <constraint firstItem="GSY-yl-B1x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HAl-ol-2oF"/>
-                            <constraint firstItem="ma1-DS-DlU" firstAttribute="top" secondItem="KYZ-iH-vV2" secondAttribute="bottom" constant="20" id="I2x-FP-acm"/>
-                            <constraint firstItem="KYZ-iH-vV2" firstAttribute="top" secondItem="GSY-yl-B1x" secondAttribute="bottom" constant="20" id="TJA-dK-g9C"/>
+                            <constraint firstItem="ma1-DS-DlU" firstAttribute="top" secondItem="KYZ-iH-vV2" secondAttribute="bottom" constant="15" id="I2x-FP-acm"/>
+                            <constraint firstItem="KYZ-iH-vV2" firstAttribute="top" secondItem="GSY-yl-B1x" secondAttribute="bottom" constant="10" id="TJA-dK-g9C"/>
                             <constraint firstItem="GSY-yl-B1x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="llm-wD-06Y"/>
                             <constraint firstItem="ma1-DS-DlU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o5D-pS-Yag"/>
                         </constraints>
