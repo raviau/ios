@@ -50,14 +50,27 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOn-yd-iLR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Share" id="kxd-Z4-77y">
+                                        <connections>
+                                            <action selector="share:" destination="BYZ-38-t0r" id="IWe-p8-Y46"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="YOn-yd-iLR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="295-zX-dO4"/>
                             <constraint firstItem="Uk7-Pz-D2V" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="3cu-KW-A49"/>
                             <constraint firstItem="4LV-qR-FnM" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="430-GE-J0m"/>
                             <constraint firstItem="hNl-cO-h01" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Rw-J5-Qqn"/>
                             <constraint firstItem="Uk7-Pz-D2V" firstAttribute="top" secondItem="hNl-cO-h01" secondAttribute="top" id="79p-xd-iBB"/>
+                            <constraint firstItem="YOn-yd-iLR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AKV-6Q-JdB"/>
                             <constraint firstItem="hNl-cO-h01" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DQR-Nw-ARN"/>
+                            <constraint firstAttribute="trailing" secondItem="YOn-yd-iLR" secondAttribute="trailing" id="Qtk-NZ-J8J"/>
                             <constraint firstItem="4LV-qR-FnM" firstAttribute="bottom" secondItem="hNl-cO-h01" secondAttribute="bottom" id="gOx-J5-BbZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -65,6 +78,7 @@
                     <connections>
                         <outlet property="bottomText" destination="4LV-qR-FnM" id="acB-Ge-PJx"/>
                         <outlet property="imageView" destination="hNl-cO-h01" id="n3E-lO-0nb"/>
+                        <outlet property="shareToolbar" destination="YOn-yd-iLR" id="tQq-ag-eGC"/>
                         <outlet property="toolBar" destination="XVR-9H-qGs" id="9Ye-6l-90v"/>
                         <outlet property="topText" destination="Uk7-Pz-D2V" id="eVU-Ah-Vsv"/>
                         <outlet property="viewYConstraint" destination="DQR-Nw-ARN" id="F7c-oX-9nL"/>

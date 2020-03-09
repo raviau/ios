@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var topText: UITextField!
     @IBOutlet var bottomText: UITextField!
     @IBOutlet var viewYConstraint: NSLayoutConstraint!
+    @IBOutlet var shareToolbar: UIToolbar!
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -24,6 +25,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedString.Key.strokeWidth: 7.0
     ]
+    
+    struct Meme {
+        var topText: String
+        var  bottomText: String
+        var originalImage: UIImage
+        var memedImage:  UIImage
+        
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,6 +45,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeFromKeyboardNotifications()
     }
     
+    func save(type: UIActivity.ActivityType?, completed:  Bool, items: [Any]?, error:  Error?) {
+        if completed {
+            let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+        }
+        print("in save")
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         if let uiItems = toolBar.items {
@@ -44,7 +61,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 }
             }
         }
-        
+
+        enableDisableShareButton()
+
         topText.delegate = self
         bottomText.delegate = self
         
@@ -92,6 +111,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
+    @IBAction func share(_ sender: Any) {
+        let memedImage = generateMemedImage()
+        let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        controller.completionWithItemsHandler = save
+        present(controller, animated: true, completion: nil)
+        
+    }
+    
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -137,8 +164,38 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             print("unable to load image")
         }
         
+        enableDisableShareButton()
         dismiss(animated: true, completion: nil)
     }
+    
+    func enableDisableShareButton() {
+        if let uiItems = shareToolbar.items {
+            for item in uiItems  {
+                if item.title == "Share" {
+                    item.isEnabled = (imageView.image != nil)
+                }
+            }
+        }
+    }
+    
+    func generateMemedImage() -> UIImage {
+
+        toolBar.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setToolbarHidden(true, animated: false)
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setToolbarHidden(false, animated: false)
+        toolBar.isHidden = false
+
+        return memedImage
+    }
+
 
     
 }
