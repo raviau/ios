@@ -32,7 +32,7 @@
                                 <rect key="frame" x="191" y="544" width="32" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XVR-9H-qGs">
                                 <rect key="frame" x="0.0" y="810" width="414" height="44"/>
@@ -67,6 +67,7 @@
                         <outlet property="imageView" destination="hNl-cO-h01" id="n3E-lO-0nb"/>
                         <outlet property="toolBar" destination="XVR-9H-qGs" id="9Ye-6l-90v"/>
                         <outlet property="topText" destination="Uk7-Pz-D2V" id="eVU-Ah-Vsv"/>
+                        <outlet property="viewYConstraint" destination="DQR-Nw-ARN" id="F7c-oX-9nL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

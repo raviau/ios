@@ -16,7 +16,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var toolBar: UIToolbar!
     @IBOutlet var topText: UITextField!
     @IBOutlet var bottomText: UITextField!
-
+    @IBOutlet var viewYConstraint: NSLayoutConstraint!
+    
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
@@ -51,12 +52,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topText.textAlignment = .center
         topText.defaultTextAttributes = memeTextAttributes
         topText.borderStyle = .none
+        topText.isHidden = true
         topText.text = "TOP"
         
         
         bottomText.textAlignment = .center
         bottomText.defaultTextAttributes = memeTextAttributes
         bottomText.borderStyle = .none
+        bottomText.isHidden =  true
         bottomText.text = "BOTTOM"
         
         
@@ -64,10 +67,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Do any additional setup after loading the view.
     }
 
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        print("textField: \(textField.text ?? "noValue")")
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""
         }
@@ -102,20 +103,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
+        if bottomText.isEditing {
+            viewYConstraint.constant -= getKeyboardHeight(notification)
+        }
 
-        print(notification.object)
-        view.frame.origin.y -= getKeyboardHeight(notification)
     }
 
     @objc func keyboardWillHide(_ notification:Notification) {
+        if bottomText.isEditing {
+            viewYConstraint.constant += getKeyboardHeight(notification)
+        }
 
-        
-        view.frame.origin.y += getKeyboardHeight(notification)
+//        view.frame.origin.y += getKeyboardHeight(notification)
     }
 
+    
+    
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
 
         let userInfo = notification.userInfo
+        print(userInfo!)
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.cgRectValue.height
     }
@@ -124,6 +131,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let image = info[.originalImage] as? UIImage{
             imageView.image = image
+            topText.isHidden = false
+            bottomText.isHidden =  false
         } else {
             print("unable to load image")
         }
