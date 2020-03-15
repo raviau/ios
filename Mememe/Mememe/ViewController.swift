@@ -17,7 +17,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var topText: UITextField!
     @IBOutlet var bottomText: UITextField!
     @IBOutlet var viewYConstraint: NSLayoutConstraint!
-    @IBOutlet var shareToolbar: UIToolbar!
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -25,16 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedString.Key.strokeWidth: 7.0
     ]
-    
-    struct Meme {
-        var topText: String
-        var  bottomText: String
-        var originalImage: UIImage
-        var memedImage:  UIImage
         
-        
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
@@ -47,10 +37,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save(type: UIActivity.ActivityType?, completed:  Bool, items: [Any]?, error:  Error?) {
         if completed {
+            let  delegate = UIApplication.shared.delegate as! AppDelegate
             let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+            delegate.memes.append(meme)
+            print("in save \(delegate.memes.count)")
         }
-        print("in save")
-        dismiss(animated: true, completion: nil)
+//        self.navigationController!.popToRootViewController(animated: true)
+        self.navigationController!.popToRootViewController(animated: true)
+//        dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,6 +109,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         controller.completionWithItemsHandler = save
+//        self.navigationController!.popoverPresentationController(controller, animated: true)
+
         present(controller, animated: true, completion: nil)
         
     }
@@ -169,7 +165,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func enableDisableShareButton() {
-        if let uiItems = shareToolbar.items {
+        if let uiItems = navigationItem.rightBarButtonItems {
             for item in uiItems  {
                 if item.title == "Share" {
                     item.isEnabled = (imageView.image != nil)
