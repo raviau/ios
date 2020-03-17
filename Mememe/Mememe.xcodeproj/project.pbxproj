@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DD340EF8241DC3A600D23B52 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD340EF7241DC3A600D23B52 /* TableViewController.swift */; };
 		DD340EFA241DC3FC00D23B52 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD340EF9241DC3FC00D23B52 /* Meme.swift */; };
+		DD436093241E419700C84CEF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD436092241E419700C84CEF /* CollectionViewController.swift */; };
+		DD436095241E423C00C84CEF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD436094241E423C00C84CEF /* CollectionViewCell.swift */; };
 		DDDF8928240F8E7000322FDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF8927240F8E7000322FDC /* AppDelegate.swift */; };
 		DDDF892A240F8E7000322FDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF8929240F8E7000322FDC /* SceneDelegate.swift */; };
 		DDDF892C240F8E7000322FDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF892B240F8E7000322FDC /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		DD340EF7241DC3A600D23B52 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DD340EF9241DC3FC00D23B52 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		DD436092241E419700C84CEF /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		DD436094241E423C00C84CEF /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		DDDF8924240F8E7000322FDC /* Mememe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mememe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDF8927240F8E7000322FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDDF8929240F8E7000322FDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				DDDF8935240F8E7000322FDC /* Info.plist */,
 				DD340EF7241DC3A600D23B52 /* TableViewController.swift */,
 				DD340EF9241DC3FC00D23B52 /* Meme.swift */,
+				DD436092241E419700C84CEF /* CollectionViewController.swift */,
+				DD436094241E423C00C84CEF /* CollectionViewCell.swift */,
 			);
 			path = Mememe;
 			sourceTree = "<group>";
@@ -144,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD436093241E419700C84CEF /* CollectionViewController.swift in Sources */,
 				DD340EFA241DC3FC00D23B52 /* Meme.swift in Sources */,
 				DDDF892C240F8E7000322FDC /* ViewController.swift in Sources */,
+				DD436095241E423C00C84CEF /* CollectionViewCell.swift in Sources */,
 				DDDF8928240F8E7000322FDC /* AppDelegate.swift in Sources */,
 				DDDF892A240F8E7000322FDC /* SceneDelegate.swift in Sources */,
 				DD340EF8241DC3A600D23B52 /* TableViewController.swift in Sources */,

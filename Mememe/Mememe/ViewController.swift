@@ -40,7 +40,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let  delegate = UIApplication.shared.delegate as! AppDelegate
             let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
             delegate.memes.append(meme)
-            print("in save \(delegate.memes.count)")
         }
 //        self.navigationController!.popToRootViewController(animated: true)
         self.navigationController!.popToRootViewController(animated: true)

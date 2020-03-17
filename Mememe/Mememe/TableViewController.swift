@@ -16,6 +16,15 @@ class TableViewController: UITableViewController {
         return memes.count
     }
     
+    override func viewDidLoad() {
+        self.navigationItem.rightBarButtonItem  = UIBarButtonItem(
+                                                        title: "Add",
+                                                        style: .plain,
+                                                        target: self,
+                                                        action: #selector(showEditor))
+
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let meme = memes[indexPath.row]
@@ -29,23 +38,12 @@ class TableViewController: UITableViewController {
         let  delegate = UIApplication.shared.delegate as! AppDelegate
         self.memes = delegate.memes
         self.tableView!.reloadData()
-        print("in viewWillAppear \(delegate.memes.count)")
     }
 
-    @IBAction func showEditor(_ sender: Any) {
+    @objc func showEditor(_ sender: Any) {
         let controller = self.storyboard!.instantiateViewController(identifier: "editorView") as! ViewController
         controller.hidesBottomBarWhenPushed =  true
         self.navigationController!.pushViewController(controller, animated: false)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
