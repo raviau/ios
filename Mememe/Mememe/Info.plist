@@ -62,5 +62,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Needed to access photos in albumn</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Needed for creating memes from the photos taken from camera</string>
 </dict>
 </plist>

@@ -17,11 +17,7 @@ class TableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        self.navigationItem.rightBarButtonItem  = UIBarButtonItem(
-                                                        title: "Add",
-                                                        style: .plain,
-                                                        target: self,
-                                                        action: #selector(showEditor))
+        self.navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(showEditor))
 
     }
     

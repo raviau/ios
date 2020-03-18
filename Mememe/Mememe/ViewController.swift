@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth: 7.0
+        NSAttributedString.Key.strokeWidth: -4.0
     ]
         
     override func viewWillAppear(_ animated: Bool) {
@@ -64,14 +64,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topText.textAlignment = .center
         topText.defaultTextAttributes = memeTextAttributes
         topText.borderStyle = .none
-        topText.isHidden = true
+//        topText.isHidden = true
         topText.text = "TOP"
         
         
         bottomText.textAlignment = .center
         bottomText.defaultTextAttributes = memeTextAttributes
         bottomText.borderStyle = .none
-        bottomText.isHidden =  true
+//        bottomText.isHidden =  true
         bottomText.text = "BOTTOM"
         
         
