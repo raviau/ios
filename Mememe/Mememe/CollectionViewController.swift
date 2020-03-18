@@ -32,6 +32,15 @@ class CollectionViewController: UICollectionViewController {
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: width, height: height)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let meme = memes[indexPath.row]
+        let memeDetailViewController = self.storyboard?.instantiateViewController(identifier: "MemeDetailViewController") as! MemeDetailViewController
+        
+        memeDetailViewController.meme = meme
+        self.navigationController?.pushViewController(memeDetailViewController, animated: true)
+
+    }
 
     @objc func showEditor(_ sender: Any) {
         let controller = self.storyboard!.instantiateViewController(identifier: "editorView") as! ViewController
