@@ -178,9 +178,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XVR-9H-qGs">
-                                <rect key="frame" x="0.0" y="770" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVR-9H-qGs">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items>
                                     <barButtonItem title="Camera" id="QTD-Dg-UD7">
                                         <connections>
@@ -197,12 +196,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="XVR-9H-qGs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2tB-Ng-5Ab"/>
                             <constraint firstItem="Uk7-Pz-D2V" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="3cu-KW-A49"/>
                             <constraint firstItem="4LV-qR-FnM" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="430-GE-J0m"/>
                             <constraint firstItem="hNl-cO-h01" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Rw-J5-Qqn"/>
                             <constraint firstItem="Uk7-Pz-D2V" firstAttribute="top" secondItem="hNl-cO-h01" secondAttribute="top" id="79p-xd-iBB"/>
                             <constraint firstItem="hNl-cO-h01" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DQR-Nw-ARN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XVR-9H-qGs" secondAttribute="bottom" id="Tuf-hT-3W0"/>
                             <constraint firstItem="4LV-qR-FnM" firstAttribute="bottom" secondItem="hNl-cO-h01" secondAttribute="bottom" id="gOx-J5-BbZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XVR-9H-qGs" secondAttribute="trailing" id="iWS-C5-g6p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
