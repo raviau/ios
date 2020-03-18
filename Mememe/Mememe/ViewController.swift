@@ -90,17 +90,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         textField.resignFirstResponder()
         return true
     }
-    @IBAction func pickImage(_ sender: Any) {
+    fileprivate func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate  = self
-        imagePickerController.sourceType = .savedPhotosAlbum
+        imagePickerController.sourceType = sourceType
         present(imagePickerController, animated: true, completion: nil)
     }
+    
+    @IBAction func pickImage(_ sender: Any) {
+        presentImagePicker(sourceType: .savedPhotosAlbum)
+    }
     @IBAction func pickFromCamera(_ sender: Any) {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate  = self
-        imagePickerController.sourceType = .camera
-        present(imagePickerController, animated: true, completion: nil)
+        presentImagePicker(sourceType: .camera)
 
     }
     
