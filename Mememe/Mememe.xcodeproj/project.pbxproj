@@ -17,6 +17,7 @@
 		DDDF892F240F8E7000322FDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF892D240F8E7000322FDC /* Main.storyboard */; };
 		DDDF8931240F8E7000322FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDF8930240F8E7000322FDC /* Assets.xcassets */; };
 		DDDF8934240F8E7000322FDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDDF8932240F8E7000322FDC /* LaunchScreen.storyboard */; };
+		DDF80F6D24219E5F003BA61B /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF80F6C24219E5F003BA61B /* MemeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DDDF8930240F8E7000322FDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDDF8933240F8E7000322FDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDDF8935240F8E7000322FDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDF80F6C24219E5F003BA61B /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				DD340EF9241DC3FC00D23B52 /* Meme.swift */,
 				DD436092241E419700C84CEF /* CollectionViewController.swift */,
 				DD436094241E423C00C84CEF /* CollectionViewCell.swift */,
+				DDF80F6C24219E5F003BA61B /* MemeDetailViewController.swift */,
 			);
 			path = Mememe;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				DDDF8928240F8E7000322FDC /* AppDelegate.swift in Sources */,
 				DDDF892A240F8E7000322FDC /* SceneDelegate.swift in Sources */,
 				DD340EF8241DC3A600D23B52 /* TableViewController.swift in Sources */,
+				DDF80F6D24219E5F003BA61B /* MemeDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
