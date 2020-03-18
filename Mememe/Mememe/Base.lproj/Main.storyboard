@@ -179,7 +179,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVR-9H-qGs">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem title="Camera" id="QTD-Dg-UD7">
                                         <connections>
@@ -196,20 +196,23 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XVR-9H-qGs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2tB-Ng-5Ab"/>
+                            <constraint firstItem="XVR-9H-qGs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2tB-Ng-5Ab"/>
                             <constraint firstItem="Uk7-Pz-D2V" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="3cu-KW-A49"/>
                             <constraint firstItem="4LV-qR-FnM" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="430-GE-J0m"/>
                             <constraint firstItem="hNl-cO-h01" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Rw-J5-Qqn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hNl-cO-h01" secondAttribute="trailing" constant="37" id="6gn-uE-vXd"/>
                             <constraint firstItem="Uk7-Pz-D2V" firstAttribute="top" secondItem="hNl-cO-h01" secondAttribute="top" id="79p-xd-iBB"/>
                             <constraint firstItem="hNl-cO-h01" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DQR-Nw-ARN"/>
+                            <constraint firstItem="hNl-cO-h01" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="KSD-Mj-1Mh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XVR-9H-qGs" secondAttribute="bottom" id="Tuf-hT-3W0"/>
+                            <constraint firstItem="hNl-cO-h01" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="284" id="U27-kT-cwW"/>
                             <constraint firstItem="4LV-qR-FnM" firstAttribute="bottom" secondItem="hNl-cO-h01" secondAttribute="bottom" id="gOx-J5-BbZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XVR-9H-qGs" secondAttribute="trailing" id="iWS-C5-g6p"/>
+                            <constraint firstAttribute="trailing" secondItem="XVR-9H-qGs" secondAttribute="trailing" id="iWS-C5-g6p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="2bl-hr-zsc">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="kxd-Z4-77y">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="kxd-Z4-77y">
                             <connections>
                                 <action selector="share:" destination="BYZ-38-t0r" id="IWe-p8-Y46"/>
                             </connections>
@@ -235,12 +238,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ifj-Ec-hgy">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ifj-Ec-hgy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ifj-Ec-hgy" firstAttribute="leading" secondItem="bFg-X3-Gtj" secondAttribute="leading" id="5zY-wO-hXX"/>
+                            <constraint firstAttribute="bottom" secondItem="Ifj-Ec-hgy" secondAttribute="bottom" id="UfI-GV-jcE"/>
+                            <constraint firstAttribute="trailing" secondItem="Ifj-Ec-hgy" secondAttribute="trailing" id="h4z-Vk-DaW"/>
+                            <constraint firstItem="Ifj-Ec-hgy" firstAttribute="top" secondItem="bFg-X3-Gtj" secondAttribute="top" id="px1-f2-ua3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OHi-Re-YWR"/>
                     </view>
                     <connections>

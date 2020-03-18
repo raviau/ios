@@ -56,27 +56,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
 
         enableDisableShareButton()
+        
+        setUpTextField(textField: topText, text: "TOP")
+        setUpTextField(textField: bottomText, text: "BOTTOM")        
+    }
+    
+    func setUpTextField(textField: UITextField, text: String) {
+        textField.delegate = self
+        textField.textAlignment = .center
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.borderStyle = .none
+        textField.text = text
 
-        topText.delegate = self
-        bottomText.delegate = self
-        
-        
-        topText.textAlignment = .center
-        topText.defaultTextAttributes = memeTextAttributes
-        topText.borderStyle = .none
-//        topText.isHidden = true
-        topText.text = "TOP"
-        
-        
-        bottomText.textAlignment = .center
-        bottomText.defaultTextAttributes = memeTextAttributes
-        bottomText.borderStyle = .none
-//        bottomText.isHidden =  true
-        bottomText.text = "BOTTOM"
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
