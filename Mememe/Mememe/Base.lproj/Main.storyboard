@@ -160,20 +160,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hNl-cO-h01">
-                                <rect key="frame" x="37" y="328" width="340" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="340" id="EnK-SF-Qsg"/>
-                                    <constraint firstAttribute="height" constant="250" id="U4M-L7-CCS"/>
-                                </constraints>
+                                <rect key="frame" x="37" y="44" width="340" height="769"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uk7-Pz-D2V">
-                                <rect key="frame" x="191" y="328" width="32" height="34"/>
+                                <rect key="frame" x="77" y="44" width="260" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4LV-qR-FnM">
-                                <rect key="frame" x="191" y="544" width="32" height="34"/>
+                                <rect key="frame" x="77" y="779" width="260" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -196,23 +192,26 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="XVR-9H-qGs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2tB-Ng-5Ab"/>
-                            <constraint firstItem="Uk7-Pz-D2V" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="3cu-KW-A49"/>
-                            <constraint firstItem="4LV-qR-FnM" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="430-GE-J0m"/>
-                            <constraint firstItem="hNl-cO-h01" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Rw-J5-Qqn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hNl-cO-h01" secondAttribute="trailing" constant="37" id="6gn-uE-vXd"/>
-                            <constraint firstItem="Uk7-Pz-D2V" firstAttribute="top" secondItem="hNl-cO-h01" secondAttribute="top" id="79p-xd-iBB"/>
-                            <constraint firstItem="hNl-cO-h01" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DQR-Nw-ARN"/>
-                            <constraint firstItem="hNl-cO-h01" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="KSD-Mj-1Mh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XVR-9H-qGs" secondAttribute="bottom" id="Tuf-hT-3W0"/>
-                            <constraint firstItem="hNl-cO-h01" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="284" id="U27-kT-cwW"/>
-                            <constraint firstItem="4LV-qR-FnM" firstAttribute="bottom" secondItem="hNl-cO-h01" secondAttribute="bottom" id="gOx-J5-BbZ"/>
-                            <constraint firstAttribute="trailing" secondItem="XVR-9H-qGs" secondAttribute="trailing" id="iWS-C5-g6p"/>
+                            <constraint firstItem="4LV-qR-FnM" firstAttribute="trailing" secondItem="hNl-cO-h01" secondAttribute="trailing" constant="-40" id="931-iy-pN9"/>
+                            <constraint firstItem="XVR-9H-qGs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Bl-Yw-Kaq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XVR-9H-qGs" secondAttribute="bottom" id="Jtt-gn-8Ub"/>
+                            <constraint firstItem="hNl-cO-h01" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="LjR-bZ-Cm1"/>
+                            <constraint firstItem="4LV-qR-FnM" firstAttribute="leading" secondItem="hNl-cO-h01" secondAttribute="leading" constant="40" id="OEC-Wd-lY7"/>
+                            <constraint firstItem="hNl-cO-h01" firstAttribute="bottom" secondItem="XVR-9H-qGs" secondAttribute="top" id="VMB-y6-Ebm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XVR-9H-qGs" secondAttribute="trailing" id="Xj7-5n-53x"/>
+                            <constraint firstItem="Uk7-Pz-D2V" firstAttribute="trailing" secondItem="hNl-cO-h01" secondAttribute="trailing" constant="-40" id="bhW-zx-b5b"/>
+                            <constraint firstItem="XVR-9H-qGs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dd7-EQ-Lzv"/>
+                            <constraint firstItem="4LV-qR-FnM" firstAttribute="bottom" secondItem="hNl-cO-h01" secondAttribute="bottom" id="g5c-ew-bj6"/>
+                            <constraint firstItem="hNl-cO-h01" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gH4-zw-oRY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hNl-cO-h01" secondAttribute="trailing" constant="37" id="hoa-oI-6kN"/>
+                            <constraint firstItem="Uk7-Pz-D2V" firstAttribute="centerX" secondItem="hNl-cO-h01" secondAttribute="centerX" id="q8e-bD-jNh"/>
+                            <constraint firstItem="Uk7-Pz-D2V" firstAttribute="top" secondItem="hNl-cO-h01" secondAttribute="top" id="qxn-uq-WiW"/>
+                            <constraint firstItem="Uk7-Pz-D2V" firstAttribute="leading" secondItem="hNl-cO-h01" secondAttribute="leading" constant="40" id="xj8-ul-zwO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="2bl-hr-zsc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="kxd-Z4-77y">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="kxd-Z4-77y">
                             <connections>
                                 <action selector="share:" destination="BYZ-38-t0r" id="IWe-p8-Y46"/>
                             </connections>
@@ -223,7 +222,6 @@
                         <outlet property="imageView" destination="hNl-cO-h01" id="n3E-lO-0nb"/>
                         <outlet property="toolBar" destination="XVR-9H-qGs" id="9Ye-6l-90v"/>
                         <outlet property="topText" destination="Uk7-Pz-D2V" id="eVU-Ah-Vsv"/>
-                        <outlet property="viewYConstraint" destination="DQR-Nw-ARN" id="F7c-oX-9nL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -64,6 +64,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func setUpTextField(textField: UITextField, text: String) {
         textField.delegate = self
         textField.textAlignment = .center
+        textField.adjustsFontSizeToFitWidth =  true
         textField.defaultTextAttributes = memeTextAttributes
         textField.borderStyle = .none
         textField.text = text
@@ -118,14 +119,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomText.isEditing {
-            viewYConstraint.constant -= getKeyboardHeight(notification)
+            self.view.frame.origin.y -= getKeyboardHeight(notification)
         }
 
     }
 
     @objc func keyboardWillHide(_ notification:Notification) {
-        if bottomText.isEditing {
-            viewYConstraint.constant += getKeyboardHeight(notification)
+        if bottomText.isEditing && view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
         }
 
 //        view.frame.origin.y += getKeyboardHeight(notification)
