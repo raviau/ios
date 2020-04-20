@@ -23,6 +23,7 @@
 		DDC43B0024355AB900F88ABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDC43AFE24355AB900F88ABA /* LaunchScreen.storyboard */; };
 		DDE2EC762443C793009ABC10 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE2EC752443C793009ABC10 /* LoginRequest.swift */; };
 		DDE2EC7A2443EDA4009ABC10 /* UdacityLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE2EC792443EDA4009ABC10 /* UdacityLoginRequest.swift */; };
+		DDE8930D244D2881009333EF /* AddLocationStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE8930C244D2881009333EF /* AddLocationStepOneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DDC43B0124355AB900F88ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDE2EC752443C793009ABC10 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		DDE2EC792443EDA4009ABC10 /* UdacityLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityLoginRequest.swift; sourceTree = "<group>"; };
+		DDE8930C244D2881009333EF /* AddLocationStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationStepOneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				DDC43AF724355AB800F88ABA /* LoginViewController.swift */,
 				DD433093244958E9002CE98C /* LocationMapViewController.swift */,
+				DDE8930C244D2881009333EF /* AddLocationStepOneViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				DD20BC3324436D2B00AD9858 /* Session.swift in Sources */,
 				DD66B2FE244C35CC0019CD88 /* StudentLocation.swift in Sources */,
 				DDC43AF824355AB800F88ABA /* LoginViewController.swift in Sources */,
+				DDE8930D244D2881009333EF /* AddLocationStepOneViewController.swift in Sources */,
 				DD433094244958E9002CE98C /* LocationMapViewController.swift in Sources */,
 				DDC43AF424355AB800F88ABA /* AppDelegate.swift in Sources */,
 				DDC43AF624355AB800F88ABA /* SceneDelegate.swift in Sources */,

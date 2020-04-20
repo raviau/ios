@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
             if successful {
                 let storyboard = UIStoryboard (name: "Main", bundle: nil)
                 let mainTab = storyboard.instantiateViewController(identifier: "MainTabController") as! UITabBarController
+                self.navigationController?.setToolbarItems([UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: nil)], animated: true)
                 self.navigationController?.pushViewController(mainTab, animated: false)
             } else {
                 print("login failed: \(error?.localizedDescription ?? "")")

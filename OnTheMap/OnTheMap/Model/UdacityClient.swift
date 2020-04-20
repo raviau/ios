@@ -20,7 +20,7 @@ class UdacityClient {
             case .session:
                 return Endpoints.base + "/session"
             case .studentLocation:
-                return Endpoints.base + "/StudentLocation"
+                return Endpoints.base + "/StudentLocation?order=-updatedAt"
             }
         }
         
@@ -115,7 +115,7 @@ class UdacityClient {
                 
                 let decoder = JSONDecoder()
                 do {
-                    print("response: \(String(data: data.suffix(from: 5), encoding: String.Encoding.utf8) ?? "")")
+//                    print("response: \(String(data: data.suffix(from: 5), encoding: String.Encoding.utf8) ?? "")")
                     
                     try setDateDecodingStrategy(decoder)
                     let responseObject = try decoder.decode(ResponseType.self, from: data.suffix(from: 5))
