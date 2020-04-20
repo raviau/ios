@@ -16,7 +16,8 @@ class LocationMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         var locations = [[String: Any]] ()
-        self.navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(self.showEditor))
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.compose, target: self, action: #selector(showEditor))
 
         UdacityClient.getStudentLocations { (studentLocations, error) in
             if let studentLocations = studentLocations {
@@ -24,8 +25,7 @@ class LocationMapViewController: UIViewController, MKMapViewDelegate {
                     for studentLocation in studentLocations.results {
                         locations.append(studentLocation.dictionary)
                     }
-            //        let locations = hardCodedLocationData()
-                    
+
                     // We will create an MKPointAnnotation for each dictionary in "locations". The
                     // point annotations will be stored in this array, and then provided to the map view.
                     var annotations = [MKPointAnnotation]()
@@ -75,7 +75,7 @@ class LocationMapViewController: UIViewController, MKMapViewDelegate {
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
-            pinView!.pinColor = .red
+            pinView!.pinTintColor = .red
             pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         else {

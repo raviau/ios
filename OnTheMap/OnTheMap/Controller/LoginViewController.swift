@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.hidesBarsOnTap = true
+//        self.navigationController?.hidesBarsOnTap = true
         // Do any additional setup after loading the view.
     }
 
