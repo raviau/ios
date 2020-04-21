@@ -17,25 +17,41 @@ class AddLocationStepTwoViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
 
+    var activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+
+    fileprivate func initializeActivityIndicator() {
+        self.activityIndicator.center = self.view.center
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.style =  UIActivityIndicatorView.Style.medium
+        self.view.addSubview(self.activityIndicator)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+
         if let address = address {
+
+
+            initializeActivityIndicator()
+            self.activityIndicator.startAnimating()
+
             CLGeocoder().geocodeAddressString(address, completionHandler: {
                   (placemarks, error) -> Void in
 
                   if let placemark = placemarks?[0] {
                     if let coorrdinate = placemark.location?.coordinate {
                         self.coordinate = coorrdinate
-                        let selectedAddress = MKMapRect(x: coorrdinate.longitude, y: coorrdinate.latitude, width: 100, height: 100)
                         self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
-//                        self.mapView.setVisibleMapRect(selectedAddress, animated: true)
                         self.mapView.setCenter(coorrdinate, animated: true)
                     }
+                    self.activityIndicator.stopAnimating()
                   } else {
+                    self.activityIndicator.stopAnimating()
                     self.showFailure(message: "Could not locate address")
                 }
               })
+            self.activityIndicator.stopAnimating()
         } else {
             self.showFailure(message: "Please provide address.")
         }
