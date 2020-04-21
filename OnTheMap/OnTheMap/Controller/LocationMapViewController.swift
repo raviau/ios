@@ -18,6 +18,7 @@ class LocationMapViewController: UIViewController, MKMapViewDelegate {
         var locations = [[String: Any]] ()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.compose, target: self, action: #selector(showEditor))
+        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close, target: self, action: #selector(logout))
 
         UdacityClient.getStudentLocations { (studentLocations, error) in
             if let studentLocations = studentLocations {
@@ -102,6 +103,15 @@ class LocationMapViewController: UIViewController, MKMapViewDelegate {
         let controller = self.storyboard!.instantiateViewController(identifier: "addLocation") as! AddLocationStepOneViewController
         controller.hidesBottomBarWhenPushed =  true
         self.navigationController!.pushViewController(controller, animated: false)
+    }
+
+    @objc func logout(_ sender: Any) {
+        print("showinng editor")
+        UdacityClient.logout {
+            DispatchQueue.main.async {
+                self.navigationController!.popToRootViewController(animated: true)
+            }
+        }
     }
 
 }

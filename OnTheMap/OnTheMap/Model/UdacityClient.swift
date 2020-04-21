@@ -71,6 +71,7 @@ class UdacityClient {
         return task
     }
 
+
     
     class func setDateDecodingStrategy(_ decoder: JSONDecoder) throws {
         let formatter = DateFormatter()
@@ -172,7 +173,20 @@ class UdacityClient {
             }
         }
     }
-    
+    class func logout(completion: @escaping () -> Void) {
+        var request = URLRequest(url: Endpoints.session.url)
+        request.httpMethod = "DELETE"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                print("data: \((String(data: data, encoding: String.Encoding.utf8) ?? ""))")
+            }
+            print("error: \(error)")
+            completion()
+        }
+        task.resume()
+    }
+
     class func addLocation(firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Double, longitude: Double, completion: @escaping (Bool, Error?) -> Void) {
         let body = AddLocationRequest(uniqueKey: "aaa111222", firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
         taskForPOSTRequest(url: Endpoints.studentLocation.url, responseType: AddLocationResponse.self, body: body, trim: false) { response, error in

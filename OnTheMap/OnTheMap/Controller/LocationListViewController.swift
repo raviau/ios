@@ -16,7 +16,8 @@ class LocationListViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.compose, target: self, action: #selector(showEditor))
-        
+        self.navigationController?.navigationBar.topItem?.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close, target: self, action: #selector(logout))
+
         UdacityClient.getStudentLocations { (studentLocations, error) in
             if let studentLocations = studentLocations {
                 DispatchQueue.main.async {
@@ -68,4 +69,12 @@ class LocationListViewController: UITableViewController {
             app.open(URL(string: url)!, options: [:], completionHandler: nil)
         }
 
+    @objc func logout(_ sender: Any) {
+        print("showinng editor")
+        UdacityClient.logout {
+            DispatchQueue.main.async {
+                self.navigationController!.popToRootViewController(animated: true)
+            }
+        }
+    }
 }
