@@ -66,6 +66,8 @@ class AddLocationStepTwoViewController: UIViewController {
                     self.navigationController?.setToolbarItems([UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: nil)], animated: true)
                     self.navigationController?.pushViewController(mainTab, animated: false)
 
+                } else {
+                    self.showFailure(message: "Unable to add new location")
                 }
             }
 

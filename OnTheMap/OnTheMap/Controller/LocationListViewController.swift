@@ -26,14 +26,19 @@ class LocationListViewController: UITableViewController {
                     }
                     self.tableView.reloadData()
                 }
-                
-                
+            } else {
+                self.showFailure(message: "Unable to get student locations")
             }
         }
 
 
     }
     
+    func showFailure(message: String) {
+        let alertVC = UIAlertController(title: "Location list Exception", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
+    }
 
     @objc func showEditor(_ sender: Any) {
         print("showinng editor")

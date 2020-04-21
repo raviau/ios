@@ -20,7 +20,7 @@ class UdacityClient {
             case .session:
                 return Endpoints.base + "/session"
             case .studentLocation:
-                return Endpoints.base + "/StudentLocation?order=-updatedAt"
+                return Endpoints.base + "/StudentLocation?order=-updatedAt&limit=100"
             }
         }
         

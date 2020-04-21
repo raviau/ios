@@ -62,6 +62,8 @@ class LocationMapViewController: UIViewController, MKMapViewDelegate {
                     // When the array is complete, we add the annotations to the map.
                     self.mapView.addAnnotations(annotations)
                 }
+            } else {
+                self.showFailure(message: "Unable to get student locations")
             }
         }
         
@@ -86,7 +88,13 @@ class LocationMapViewController: UIViewController, MKMapViewDelegate {
         return pinView
     }
 
-    
+    func showFailure(message: String) {
+        let alertVC = UIAlertController(title: "Location list Exception", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
+    }
+
+
     // This delegate method is implemented to respond to taps. It opens the system browser
     // to the URL specified in the annotationViews subtitle property.
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {

@@ -14,11 +14,6 @@ class AddLocationStepOneViewController: UIViewController, UINavigationController
     @IBOutlet var media: UITextField!
 
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
     @IBAction func geoCode() -> Void {
         let controller = self.storyboard!.instantiateViewController(identifier: "geoCodeView") as! AddLocationStepTwoViewController
         controller.address = address.text ?? ""
