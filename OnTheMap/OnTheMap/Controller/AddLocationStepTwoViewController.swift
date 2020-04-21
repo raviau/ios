@@ -27,7 +27,9 @@ class AddLocationStepTwoViewController: UIViewController {
                   if let placemark = placemarks?[0] {
                     if let coorrdinate = placemark.location?.coordinate {
                         self.coordinate = coorrdinate
+                        let selectedAddress = MKMapRect(x: coorrdinate.longitude, y: coorrdinate.latitude, width: 100, height: 100)
                         self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
+//                        self.mapView.setVisibleMapRect(selectedAddress, animated: true)
                         self.mapView.setCenter(coorrdinate, animated: true)
                     }
                   } else {
