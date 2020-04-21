@@ -179,32 +179,83 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Media Link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jol-Ob-AQ7">
-                                <rect key="frame" x="0.0" y="180" width="414" height="34"/>
+                                <rect key="frame" x="30" y="180" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpU-a7-4ZD">
-                                <rect key="frame" x="0.0" y="333" width="414" height="34"/>
+                                <rect key="frame" x="30" y="264" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjQ-FU-Svq">
+                                <rect key="frame" x="166" y="411" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Find on map"/>
+                                <connections>
+                                    <action selector="geoCode" destination="NPz-1g-Wjb" eventType="touchUpInside" id="VGc-DR-y94"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HpU-a7-4ZD" firstAttribute="top" secondItem="jol-Ob-AQ7" secondAttribute="bottom" constant="119" id="ccq-hd-G8z"/>
-                            <constraint firstItem="QLO-2R-kIQ" firstAttribute="trailing" secondItem="jol-Ob-AQ7" secondAttribute="trailing" id="eBu-nK-5K3"/>
-                            <constraint firstItem="QLO-2R-kIQ" firstAttribute="trailing" secondItem="HpU-a7-4ZD" secondAttribute="trailing" id="fIb-O8-rI1"/>
+                            <constraint firstItem="HpU-a7-4ZD" firstAttribute="top" secondItem="jol-Ob-AQ7" secondAttribute="bottom" constant="50" id="ccq-hd-G8z"/>
+                            <constraint firstItem="QLO-2R-kIQ" firstAttribute="trailing" secondItem="jol-Ob-AQ7" secondAttribute="trailing" constant="30" id="eBu-nK-5K3"/>
+                            <constraint firstItem="QLO-2R-kIQ" firstAttribute="trailing" secondItem="HpU-a7-4ZD" secondAttribute="trailing" constant="30" id="fIb-O8-rI1"/>
                             <constraint firstItem="jol-Ob-AQ7" firstAttribute="top" secondItem="QLO-2R-kIQ" secondAttribute="top" constant="136" id="fQf-TS-Q6i"/>
-                            <constraint firstItem="jol-Ob-AQ7" firstAttribute="leading" secondItem="QLO-2R-kIQ" secondAttribute="leading" id="he4-W2-515"/>
+                            <constraint firstItem="jol-Ob-AQ7" firstAttribute="leading" secondItem="QLO-2R-kIQ" secondAttribute="leading" constant="30" id="he4-W2-515"/>
                             <constraint firstItem="HpU-a7-4ZD" firstAttribute="centerX" secondItem="QLO-2R-kIQ" secondAttribute="centerX" id="j4L-KH-k59"/>
-                            <constraint firstItem="HpU-a7-4ZD" firstAttribute="leading" secondItem="QLO-2R-kIQ" secondAttribute="leading" id="ssx-VU-pT1"/>
+                            <constraint firstItem="HpU-a7-4ZD" firstAttribute="leading" secondItem="QLO-2R-kIQ" secondAttribute="leading" constant="30" id="ssx-VU-pT1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QLO-2R-kIQ"/>
                     </view>
+                    <connections>
+                        <outlet property="address" destination="HpU-a7-4ZD" id="dtC-1E-fn4"/>
+                        <outlet property="media" destination="jol-Ob-AQ7" id="9Tc-xh-odG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgR-lx-6BE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2270" y="-548"/>
+        </scene>
+        <!--Add Location Step Two View Controller-->
+        <scene sceneID="jTc-Fb-E4w">
+            <objects>
+                <viewController storyboardIdentifier="geoCodeView" id="Jaz-TJ-pKh" customClass="AddLocationStepTwoViewController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gXE-c0-xL5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kY6-dM-9Io">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-p8-qQE">
+                                <rect key="frame" x="162" y="661" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Location"/>
+                                <connections>
+                                    <action selector="addLocation" destination="Jaz-TJ-pKh" eventType="touchUpInside" id="YSx-AX-Waf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5FX-dF-0LR" firstAttribute="trailing" secondItem="kY6-dM-9Io" secondAttribute="trailing" id="Nhp-sf-czR"/>
+                            <constraint firstItem="kY6-dM-9Io" firstAttribute="leading" secondItem="5FX-dF-0LR" secondAttribute="leading" id="P6Z-b7-LsQ"/>
+                            <constraint firstItem="5FX-dF-0LR" firstAttribute="bottom" secondItem="kY6-dM-9Io" secondAttribute="bottom" id="ily-Zz-VWk"/>
+                            <constraint firstItem="kY6-dM-9Io" firstAttribute="top" secondItem="5FX-dF-0LR" secondAttribute="top" id="ksj-Zf-9Uz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5FX-dF-0LR"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="kY6-dM-9Io" id="ocL-Z3-BkK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f33-FY-7ML" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2983" y="-548"/>
         </scene>
     </scenes>
     <resources>

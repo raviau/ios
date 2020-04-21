@@ -10,11 +10,21 @@ import UIKit
 
 class AddLocationStepOneViewController: UIViewController, UINavigationControllerDelegate {
 
+    @IBOutlet var address: UITextField!
+    @IBOutlet var media: UITextField!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
+    @IBAction func geoCode() -> Void {
+        let controller = self.storyboard!.instantiateViewController(identifier: "geoCodeView") as! AddLocationStepTwoViewController
+        controller.address = address.text ?? ""
+        controller.media = media.text ?? ""
+            
+        self.navigationController!.pushViewController(controller, animated: false)
+    }
 
 }

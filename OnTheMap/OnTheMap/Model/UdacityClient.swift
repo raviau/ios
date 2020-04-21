@@ -95,7 +95,7 @@ class UdacityClient {
         })
     }
     
-    class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
+    class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, trim: Bool, completion: @escaping (ResponseType?, Error?) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         do {
@@ -112,13 +112,16 @@ class UdacityClient {
                     }
                     return
                 }
-                
+                var dataToDecode = data
+                if trim {
+                    dataToDecode = data.suffix(from: 5)
+                }
                 let decoder = JSONDecoder()
                 do {
-//                    print("response: \(String(data: data.suffix(from: 5), encoding: String.Encoding.utf8) ?? "")")
+                    print("response: \(String(data: dataToDecode, encoding: String.Encoding.utf8) ?? "")")
                     
                     try setDateDecodingStrategy(decoder)
-                    let responseObject = try decoder.decode(ResponseType.self, from: data.suffix(from: 5))
+                    let responseObject = try decoder.decode(ResponseType.self, from: dataToDecode)
                     print(responseObject)
                     DispatchQueue.main.async {
                         completion(responseObject, nil)
@@ -128,8 +131,12 @@ class UdacityClient {
                     do {
                         print(error)
 //                        print("response: \(String(data: data.suffix(from: 5), encoding: String.Encoding.utf8) ?? "")")
+//                        var dataToDecode = data
+//                        if trim {
+//                            dataToDecode = data.suffix(from: 5)
+//                        }
 
-                        let responseObject = try decoder.decode(LoginErrorResponse.self, from: data.suffix(from: 5))
+                        let responseObject = try decoder.decode(LoginErrorResponse.self, from: dataToDecode)
                         DispatchQueue.main.async {
                             print("sending response errro")
                             completion(nil, responseObject)
@@ -157,7 +164,7 @@ class UdacityClient {
     
     class func login(username: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         let body = UdacityLoginRequest(udacity: LoginRequest(username: username, password: password))
-        taskForPOSTRequest(url: Endpoints.session.url, responseType: LoginResponse.self, body: body) { response, error in
+        taskForPOSTRequest(url: Endpoints.session.url, responseType: LoginResponse.self, body: body, trim: true) { response, error in
             if let response = response {
                 completion(true, nil)
             } else {
@@ -166,6 +173,18 @@ class UdacityClient {
         }
     }
     
+    class func addLocation(firstName: String, lastName: String, mapString: String, mediaURL: String, latitude: Double, longitude: Double, completion: @escaping (Bool, Error?) -> Void) {
+        let body = AddLocationRequest(uniqueKey: "aaa111222", firstName: firstName, lastName: lastName, mapString: mapString, mediaURL: mediaURL, latitude: latitude, longitude: longitude)
+        taskForPOSTRequest(url: Endpoints.studentLocation.url, responseType: AddLocationResponse.self, body: body, trim: false) { response, error in
+            if let response = response {
+                completion(true, nil)
+            } else {
+                completion(false, error)
+            }
+        }
+    }
+    
+
     class func getStudentLocations(completion: @escaping (StudentLocationResults?, Error?) -> Void) -> Void {
         taskForGETRequest(url: Endpoints.studentLocation.url, responseType: StudentLocationResults.self) { (response, error) in
             if let response = response {

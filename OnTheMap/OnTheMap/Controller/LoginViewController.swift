@@ -16,15 +16,10 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.hidesBarsOnTap = true
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func navigateToMainTab(_ sender: Any) {
         
-//        var loginRequest: LoginRequest = 
-        
-//        UdacityClient.taskForPOSTRequest(url: UdacityClient.Endpoints.session.url, responseType: LoginResponse.self, body: <#T##Encodable#>, completion: <#T##(Decodable?, Error?) -> Void#>)
         UdacityClient.login(username: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (successful, error) in
             if successful {
                 let storyboard = UIStoryboard (name: "Main", bundle: nil)
@@ -33,7 +28,7 @@ class LoginViewController: UIViewController {
                 self.navigationController?.pushViewController(mainTab, animated: false)
             } else {
                 print("login failed: \(error?.localizedDescription ?? "")")
-//                self.showLoginFailure(message: error?.localizedDescription ?? "")
+                self.showLoginFailure(message: error?.localizedDescription ?? "")
             }
         }
 //        performSegue(withIdentifier: "mainTab", sender: sender)
@@ -42,7 +37,7 @@ class LoginViewController: UIViewController {
     func showLoginFailure(message: String) {
         let alertVC = UIAlertController(title: "Login Failed", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        show(alertVC, sender: nil)
+        self.present(alertVC, animated: true)
     }
 
 }
